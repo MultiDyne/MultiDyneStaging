@@ -1,0 +1,31 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RedirectMatch 301 /productdetail.cfm.* /products.html
+RedirectMatch 301 /productlist.cfm.* /products.html
+RedirectMatch 301 /resources/.* /404.html
+RedirectMatch 301 /news01.cfm.* /news.html
+RedirectMatch 301 /contact.cfm.* /contact.html
+
+#Redirection for pdf
+
+RedirectMatch 301 /pdf/pressRGB5000.pdf.* /manualPDF/RGB-5000.pdf
+RedirectMatch 301 /pdf/pressDVM1000.pdf.* /dataSheetPDF/DVM-1000.pdf
+RedirectMatch 301 /pdf/pressDVM2500.pdf.* /dataSheetPDF/DVM-2500.pdf
+RedirectMatch 301 /pdf/pressDAM4000.pdf.* /dataSheetPDF/DAM-4000.pdf
+RedirectMatch 301 /pdf/pressRGB5000.pdf.* /manualPDF/RGB-5000.pdf
+RedirectMatch 301 /pdf/pressRGB5000.pdf.* /manualPDF/RGB-5000.pdf
+RedirectMatch 301 /pdf/HD1500.pdf.* /manualPDF/HD-1500.pdf
+RedirectMatch 301 /pdf/RGB5000.pdf.* /manualPDF/RGB-5000.pdf
+RedirectMatch 301 /dataSheetPDF/HD-3500.pdf.* /manualPDF/HD-3500.pdf
+RedirectMatch 301 /pdf/CWDM2000.pdf.* /dataSheetPDF/CWDM-2000.pdf
+
+
+
+ErrorDocument 404  http://localhost/multidyne.com/404.html
+</IfModule>
